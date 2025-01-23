@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Coffee and Networking",
+    "description": "Meet like-minded professionals over a cup of coffee and discuss ideas.",
+    "datetime": "2025-01-30T10:00:00Z",
+    "location": "Central Park Coffee Shop, New York, NY",
+    "image": "https://www.annum-munir.com/hs-fs/hubfs/Images/Adventure/Barcelona/muslim-travel-blog-Barcelona-Spain-Casa-Batllo-tour.jpg?width=4032&name=muslim-travel-blog-Barcelona-Spain-Casa-Batllo-tour.jpg"
+  },
+  {
+    "title": "Evening Yoga Session",
+    "description": "Unwind and relax with a guided yoga session under the sunset.",
+    "datetime": "2025-02-05T18:30:00Z",
+    "location": "Beachfront Yoga Studio, Santa Monica, CA",
+    "image": "https://media.gettyimages.com/id/1212006373/photo/pregnant-woman-sitting-on-floor-and-stretching-her-body-while-watching-online-tutorials-on.jpg"
+  },
+  {
+    "title": "Tech Talk Meetup",
+    "description": "Join us for an evening of tech talks and networking with developers.",
+    "datetime": "2025-02-12T19:00:00Z",
+    "location": "TechHub, San Francisco, CA",
+    "image": "https://media.gettyimages.com/id/1182835371/photo/business-people-having-coffee-while-discussing-at-office-yard.jpg"
+  },
+  {
+    "title": "Art Walk Tour",
+    "description": "Explore the local art scene with a guided tour through the city's galleries.",
+    "datetime": "2025-02-20T14:00:00Z",
+    "location": "Downtown Art District, Chicago, IL",
+    "image": "https://streetartmap.org/wp-content/uploads/2020/01/IMG_20191012_155830-01-1024x768.jpeg"
+  },
+  {
+    "title": "Cooking Class for Beginners",
+    "description": "Learn to cook a new dish in a fun and interactive cooking class.",
+    "datetime": "2025-02-25T11:00:00Z",
+    "location": "Chef's Kitchen, Austin, TX",
+    "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c"
+  },
+  {
+    "title": "Hiking Adventure",
+    "description": "Join a group hike through scenic mountain trails. All levels welcome!",
+    "datetime": "2025-03-03T08:00:00Z",
+    "location": "Rocky Mountain National Park, CO",
+    "image": "https://images.unsplash.com/photo-1501594907352-04cda38ebc29"
+  },
+  {
+    "title": "Live Music Night",
+    "description": "Enjoy an evening of live performances by local bands and artists.",
+    "datetime": "2025-03-10T20:00:00Z",
+    "location": "Downtown Music Hall, Seattle, WA",
+    "image": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4"
+  },
+  {
+    "title": "Photography Workshop",
+    "description": "Learn the basics of photography and capture stunning shots with our expert guide.",
+    "datetime": "2025-03-15T09:30:00Z",
+    "location": "City Park, Portland, OR",
+    "image": "https://helenrowanphotography.com/wp-content/uploads/2018/05/photography-workshop-1-1-1024x683.jpg"
+  },
+  {
+    "title": "Book Club Meeting",
+    "description": "Discuss this month's book selection with fellow book enthusiasts.",
+    "datetime": "2025-03-20T17:00:00Z",
+    "location": "Main Library, Boston, MA",
+    "image": "https://www.thoughtco.com/thmb/8Q0Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/how-to-start-a-book-club-362068-01-5b0d6c5a04d1cf0036e8e7a7.jpg"
+  },
+  {
+    "title": "Fitness Bootcamp",
+    "description": "Challenge yourself with an intense and rewarding outdoor fitness session.",
+    "datetime": "2025-03-25T06:30:00Z",
+    "location": "Riverside Park, Denver, CO",
+    "image": "https://images.unsplash.com/photo-1599058917725-cc94ee200f48"
+  }
+]
