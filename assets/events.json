@@ -25,7 +25,7 @@
     "description": "Explore the local art scene with a guided tour through the city's galleries.",
     "datetime": "2025-02-20T14:00:00Z",
     "location": "Downtown Art District, Chicago, IL",
-    "image": "https://streetartmap.org/wp-content/uploads/2020/01/IMG_20191012_155830-01-1024x768.jpeg"
+    "image": "https://cdn.choosechicago.com/uploads/2019/06/firsttime-bean.jpg"
   },
   {
     "title": "Cooking Class for Beginners",
@@ -53,20 +53,20 @@
     "description": "Learn the basics of photography and capture stunning shots with our expert guide.",
     "datetime": "2025-03-15T09:30:00Z",
     "location": "City Park, Portland, OR",
-    "image": "https://helenrowanphotography.com/wp-content/uploads/2018/05/photography-workshop-1-1-1024x683.jpg"
+    "image": "https://muenchworkshops.com/wp-content/uploads/2022/06/oregon-coast-1200x797.jpg"
   },
   {
-    "title": "Book Club Meeting",
-    "description": "Discuss this month's book selection with fellow book enthusiasts.",
+    "title": "Boston Marathon",
+    "description": "Come and run with us in Downtown Boston.",
     "datetime": "2025-03-20T17:00:00Z",
     "location": "Main Library, Boston, MA",
-    "image": "https://www.thoughtco.com/thmb/8Q0Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/how-to-start-a-book-club-362068-01-5b0d6c5a04d1cf0036e8e7a7.jpg"
+    "image": "https://media.wbur.org/wp/2024/04/0417_marathon127-12.jpg"
   },
   {
     "title": "Fitness Bootcamp",
     "description": "Challenge yourself with an intense and rewarding outdoor fitness session.",
     "datetime": "2025-03-25T06:30:00Z",
     "location": "Riverside Park, Denver, CO",
-    "image": "https://images.unsplash.com/photo-1599058917725-cc94ee200f48"
+    "image": "https://media.glamour.com/photos/57854cdedcf627a71b7b3657/master/pass/women-planking.jpg"
   }
 ]
