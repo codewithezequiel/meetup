@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "title": "Coffee and Networking",
     "description": "Meet like-minded professionals over a cup of coffee and discuss ideas.",
     "datetime": "2025-01-30T10:00:00Z",
@@ -7,6 +8,7 @@
     "image": "https://www.annum-munir.com/hs-fs/hubfs/Images/Adventure/Barcelona/muslim-travel-blog-Barcelona-Spain-Casa-Batllo-tour.jpg?width=4032&name=muslim-travel-blog-Barcelona-Spain-Casa-Batllo-tour.jpg"
   },
   {
+    "id": 2,
     "title": "Evening Yoga Session",
     "description": "Unwind and relax with a guided yoga session under the sunset.",
     "datetime": "2025-02-05T18:30:00Z",
@@ -14,6 +16,7 @@
     "image": "https://media.npr.org/assets/img/2012/02/06/istock_000016611276small-6752354d634e040546880e4f50cb4af3c59626e5.jpg?s=800&c=85&f=jpeg"
   },
   {
+    "id": 3,
     "title": "Tech Talk Meetup",
     "description": "Join us for an evening of tech talks and networking with developers.",
     "datetime": "2025-02-12T19:00:00Z",
@@ -21,6 +24,7 @@
     "image": "https://www.yodeck.com/wp-content/uploads/2022/03/Blog-Post-_-835x-_-Tech-meetups-2.jpg"
   },
   {
+    "id": 4,
     "title": "Art Walk Tour",
     "description": "Explore the local art scene with a guided tour through the city's galleries.",
     "datetime": "2025-02-20T14:00:00Z",
@@ -28,6 +32,7 @@
     "image": "https://cdn.choosechicago.com/uploads/2019/06/firsttime-bean.jpg"
   },
   {
+    "id": 5,
     "title": "Cooking Class for Beginners",
     "description": "Learn to cook a new dish in a fun and interactive cooking class.",
     "datetime": "2025-02-25T11:00:00Z",
@@ -35,6 +40,7 @@
     "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c"
   },
   {
+    "id": 6,
     "title": "Hiking Adventure",
     "description": "Join a group hike through scenic mountain trails. All levels welcome!",
     "datetime": "2025-03-03T08:00:00Z",
@@ -42,6 +48,7 @@
     "image": "https://images.unsplash.com/photo-1501594907352-04cda38ebc29"
   },
   {
+    "id": 7,
     "title": "Live Music Night",
     "description": "Enjoy an evening of live performances by local bands and artists.",
     "datetime": "2025-03-10T20:00:00Z",
@@ -49,6 +56,7 @@
     "image": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4"
   },
   {
+    "id": 8,
     "title": "Photography Workshop",
     "description": "Learn the basics of photography and capture stunning shots with our expert guide.",
     "datetime": "2025-03-15T09:30:00Z",
@@ -56,6 +64,7 @@
     "image": "https://muenchworkshops.com/wp-content/uploads/2022/06/oregon-coast-1200x797.jpg"
   },
   {
+    "id": 9,
     "title": "Boston Marathon",
     "description": "Come and run with us in Downtown Boston.",
     "datetime": "2025-03-20T17:00:00Z",
@@ -63,6 +72,7 @@
     "image": "https://media.wbur.org/wp/2024/04/0417_marathon127-12.jpg"
   },
   {
+    "id": 10,
     "title": "Fitness Bootcamp",
     "description": "Challenge yourself with an intense and rewarding outdoor fitness session.",
     "datetime": "2025-03-25T06:30:00Z",
