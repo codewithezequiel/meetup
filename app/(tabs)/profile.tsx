@@ -8,6 +8,7 @@ import { supabase } from '~/utils/supabase';
 export default function Profile() {
   const [loading, setLoading] = useState(true);
   const [username, setUsername] = useState('');
+  const [fullName, setFullName] = useState('');
   const [website, setWebsite] = useState('');
   const [avatarUrl, setAvatarUrl] = useState('');
 
@@ -25,7 +26,7 @@ export default function Profile() {
 
       const { data, error, status } = await supabase
         .from('profiles')
-        .select(`username, website, avatar_url`)
+        .select(`username, website, full_name, avatar_url`)
         .eq('id', session?.user.id)
         .single();
       if (error && status !== 406) {
@@ -35,6 +36,7 @@ export default function Profile() {
       if (data) {
         setUsername(data.username);
         setWebsite(data.website);
+        setFullName(data.full_name);
         setAvatarUrl(data.avatar_url);
       }
     } catch (error) {
@@ -50,10 +52,12 @@ export default function Profile() {
   async function updateProfile({
     username,
     website,
+    full_name,
     avatar_url,
   }: {
     username: string;
     website: string;
+    full_name: string;
     avatar_url: string;
   }) {
     try {
@@ -63,6 +67,7 @@ export default function Profile() {
       const updates = {
         id: session?.user.id,
         username,
+        full_name,
         website,
         avatar_url,
         updated_at: new Date(),
@@ -84,6 +89,14 @@ export default function Profile() {
   return (
     <View className="flex-1 bg-white p-5">
       <Stack.Screen options={{ title: 'Profile' }} />
+
+      <TextInput
+        className="rounded-md border-gray-200 p-3 text-xl font-semibold "
+        value={fullName}
+        placeholder="full name"
+        autoCapitalize="none"
+        onChangeText={(text) => setFullName(text)}
+      />
 
       <TextInput
         className="rounded-md border-gray-200 p-3 text-xl font-semibold  text-gray-600"
@@ -111,7 +124,9 @@ export default function Profile() {
 
       <Pressable
         disabled={loading}
-        onPress={() => updateProfile({ username, website, avatar_url: avatarUrl })}
+        onPress={() =>
+          updateProfile({ username, website, avatar_url: avatarUrl, full_name: fullName })
+        }
         className=" items-center rounded-md border-2 border-blue-300 p-3 px-8">
         <Text className="text-xl font-bold text-blue-300">Save</Text>
       </Pressable>
