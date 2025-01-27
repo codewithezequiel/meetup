@@ -1,14 +1,32 @@
 import { useLocalSearchParams, Stack } from 'expo-router';
-import { View, Text, Image, ScrollView, Pressable } from 'react-native';
+import { View, Text, Image, ScrollView, Pressable, ActivityIndicator } from 'react-native';
 import dayjs from 'dayjs';
 import Feather from '@expo/vector-icons/Feather';
 import EvilIcons from '@expo/vector-icons/EvilIcons';
 
-import events from '~/assets/events.json';
+import { supabase } from '~/utils/supabase';
+import { useEffect, useState } from 'react';
 
 export default function EventPage() {
   const { id } = useLocalSearchParams();
-  const event = events.find((e) => e.id === Number(id));
+
+  const [event, setEvent] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    getEvent();
+  }, []);
+
+  async function getEvent() {
+    setLoading(true);
+    const { data, error } = await supabase.from('events').select('*').eq('id', id).single();
+    setEvent(data);
+    setLoading(false);
+  }
+
+  if (loading) {
+    return <ActivityIndicator />;
+  }
 
   if (!event) {
     return (
@@ -25,7 +43,7 @@ export default function EventPage() {
       />
       <ScrollView className="flex-1">
         {/* Event Image */}
-        <Image source={{ uri: event.image }} className="aspect-video w-full rounded-b-xl" />
+        <Image source={{ uri: event.image_uri }} className="aspect-video w-full rounded-b-xl" />
 
         {/* Event Details */}
         <View className="p-4">
@@ -37,11 +55,9 @@ export default function EventPage() {
             <Feather name="calendar" size={24} color="black" className="mr-2" />
             <View>
               <Text className="text-lg font-semibold text-gray-800">
-                {dayjs(event.datetime).format('dddd, D MMMM YYYY')}
+                {dayjs(event.date).format('dddd, D MMMM YYYY')}
               </Text>
-              <Text className="text-base text-gray-600">
-                {dayjs(event.datetime).format('hh:mm A')}
-              </Text>
+              <Text className="text-base text-gray-600">{dayjs(event.date).format('hh:mm A')}</Text>
             </View>
             <Feather name="arrow-right" size={24} color="black" className="ml-4" />
           </View>

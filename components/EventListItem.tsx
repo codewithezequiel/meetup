@@ -12,8 +12,7 @@ export default function EventListItem({ event }) {
           <View className="mb-3 flex-row items-start">
             <View className="mr-4 flex-1">
               <Text className="mb-1 text-sm font-semibold uppercase text-amber-700">
-                {dayjs(event.datetime).format('ddd, D MMM')} .{' '}
-                {dayjs(event.datetime).format('hh:mm A')}
+                {dayjs(event.date).format('ddd, D MMM')} . {dayjs(event.date).format('hh:mm A')}
               </Text>
               <Text className="mb-1 text-lg font-bold text-gray-900" numberOfLines={2}>
                 {event.title}
@@ -23,7 +22,7 @@ export default function EventListItem({ event }) {
             </View>
             <Image
               source={{
-                uri: event.image,
+                uri: event.image_uri,
               }}
               className="aspect-video w-2/5 rounded-xl"
             />
