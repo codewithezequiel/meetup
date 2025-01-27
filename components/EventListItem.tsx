@@ -18,13 +18,12 @@ export default function EventListItem({ event }) {
       .select('*', { count: 'exact', head: true })
       .eq('event_id', event.id);
 
-    console.log(count);
     setNumberOfAttendees(count);
   }
   return (
     <>
       {/* Event List Item */}
-      <Link href={`/${event.id}`} asChild>
+      <Link href={`/event/${event.id}`} asChild>
         <Pressable className="mx-2 mb-2 rounded-xl bg-white p-4 shadow-md">
           <View className="mb-3 flex-row items-start">
             <View className="mr-4 flex-1">
