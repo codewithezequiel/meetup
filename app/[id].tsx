@@ -6,12 +6,16 @@ import EvilIcons from '@expo/vector-icons/EvilIcons';
 
 import { supabase } from '~/utils/supabase';
 import { useEffect, useState } from 'react';
+import { useAuth } from '~/contexts/AuthProvider';
 
 export default function EventPage() {
   const { id } = useLocalSearchParams();
 
   const [event, setEvent] = useState(null);
+  const [attendance, setAttendance] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  const { user } = useAuth();
 
   useEffect(() => {
     getEvent();
@@ -21,7 +25,26 @@ export default function EventPage() {
     setLoading(true);
     const { data, error } = await supabase.from('events').select('*').eq('id', id).single();
     setEvent(data);
+
+    const { data: attendanceData } = await supabase
+      .from('attendance')
+      .select('*')
+      .eq('user_id', user.id)
+      .eq('event_id', id)
+      .single();
+    setAttendance(attendanceData);
+
     setLoading(false);
+  }
+
+  async function joinEvent() {
+    const { data, error } = await supabase
+      .from('attendance')
+      .insert({ user_id: user.id, event_id: event.id })
+      .select()
+      .single();
+
+    setAttendance(data);
   }
 
   if (loading) {
@@ -73,9 +96,13 @@ export default function EventPage() {
       {/* Footer */}
       <View className="absolute bottom-10 left-0 right-0 border-t-2 border-gray-400 p-4">
         <Text className="text-center text-lg font-semibold text-black">Free</Text>
-        <Pressable className="mt-2 rounded-xl bg-red-400 p-3">
-          <Text className="text-center text-lg font-bold text-white">Join and RSVP</Text>
-        </Pressable>
+        {attendance ? (
+          <Text className="font-bold text-green-500">You are attending!</Text>
+        ) : (
+          <Pressable onPress={() => joinEvent()} className="mt-2 rounded-xl bg-red-400 p-3">
+            <Text className="text-center text-lg font-bold text-white">Join and RSVP</Text>
+          </Pressable>
+        )}
       </View>
     </View>
   );
