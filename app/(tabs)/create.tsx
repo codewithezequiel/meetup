@@ -54,7 +54,7 @@ export default function CreateEvent() {
         {
           title,
           description,
-          date,
+          date: date.toISOString(),
           location,
           user_id: user.id,
         },
