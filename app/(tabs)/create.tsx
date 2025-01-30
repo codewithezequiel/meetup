@@ -29,7 +29,7 @@ export default function CreateEvent() {
 
   const { user } = useAuth();
 
-  const onChange = (event, selectedDate) => {
+  const onChange = (event, selectedDate: Date) => {
     if (selectedDate) {
       setShow(false);
       setDate(selectedDate);
