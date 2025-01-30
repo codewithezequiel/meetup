@@ -61,6 +61,7 @@ export default function CreateEvent() {
           date: date.toISOString(),
           location,
           user_id: user.id,
+          location_point: 'POINT(-73.946823 40.807416)',
         },
       ])
       .select()
@@ -68,6 +69,7 @@ export default function CreateEvent() {
 
     if (error) {
       Alert.alert('Failed to create event, something went wrong');
+      console.log(error);
     } else {
       setTitle('');
       setDescription('');
