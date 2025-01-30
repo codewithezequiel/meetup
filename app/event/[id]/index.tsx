@@ -8,6 +8,7 @@ import { supabase } from '~/utils/supabase';
 import { useEffect, useState } from 'react';
 import { useAuth } from '~/contexts/AuthProvider';
 import { Attendance, Event } from '~/types/db';
+import SupaImage from '~/components/SupaImage';
 
 export default function EventPage() {
   const { id } = useLocalSearchParams();
@@ -67,8 +68,8 @@ export default function EventPage() {
       />
       <ScrollView className="flex-1">
         {/* Event Image */}
-        <Image source={{ uri: event.image_uri }} className="aspect-video w-full rounded-b-xl" />
 
+        <SupaImage path={event.image_uri} className="aspect-video w-full rounded-b-xl" />
         {/* Event Details */}
         <View className="p-4">
           {/* Title */}

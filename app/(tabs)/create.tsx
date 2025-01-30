@@ -15,6 +15,7 @@ import { useState } from 'react';
 import { supabase } from '~/utils/supabase';
 import { useAuth } from '~/contexts/AuthProvider';
 import { router } from 'expo-router';
+import Avatar from '~/components/Avatar';
 
 export default function CreateEvent() {
   const [title, setTitle] = useState('');
@@ -24,6 +25,8 @@ export default function CreateEvent() {
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
   const [location, setLocation] = useState('');
+
+  const [imageUrl, setImageUrl] = useState('');
 
   const [loading, setIsLoading] = useState(false);
 
@@ -54,6 +57,7 @@ export default function CreateEvent() {
         {
           title,
           description,
+          image_uri: imageUrl,
           date: date.toISOString(),
           location,
           user_id: user.id,
@@ -77,6 +81,16 @@ export default function CreateEvent() {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
       <ScrollView className="mx-3 my-5">
+        <View className="items-center ">
+          <Avatar
+            size={200}
+            url={imageUrl}
+            onUpload={(url: string) => {
+              setImageUrl(url);
+            }}
+          />
+        </View>
+
         {/* Event Name Input */}
         <View className="mt-4 rounded-lg border-2 border-gray-300 bg-white p-4 shadow-sm">
           <TextInput
