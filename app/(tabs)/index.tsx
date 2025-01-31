@@ -11,10 +11,17 @@ export default function Events() {
   const [events, setEvents] = useState<NearbyEvent[]>([]);
   const [location, setLocation] = useState<Location.LocationObject | null>(null);
 
+  const [status, requestPermission] = Location.useForegroundPermissions();
+
+  useEffect(() => {
+    if (status && !status.granted && status.canAskAgain) {
+      requestPermission();
+    }
+  }, [status]);
+
   useEffect(() => {
     async function getCurrentLocation() {
-      let { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== 'granted') {
+      if (!status?.granted) {
         Alert.alert('Permission to access location was denied');
         return;
       }
@@ -24,7 +31,7 @@ export default function Events() {
     }
 
     getCurrentLocation();
-  }, []);
+  }, [status]);
 
   useEffect(() => {
     if (location) {
