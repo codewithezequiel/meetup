@@ -16,6 +16,7 @@ import { supabase } from '~/utils/supabase';
 import { useAuth } from '~/contexts/AuthProvider';
 import { router } from 'expo-router';
 import Avatar from '~/components/Avatar';
+import AddressAutoComplete from '~/components/AddressAutoComplete';
 
 export default function CreateEvent() {
   const [title, setTitle] = useState('');
@@ -24,7 +25,7 @@ export default function CreateEvent() {
   const [date, setDate] = useState(new Date());
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
-  const [location, setLocation] = useState('');
+  const [location, setLocation] = useState();
 
   const [imageUrl, setImageUrl] = useState('');
 
@@ -51,6 +52,9 @@ export default function CreateEvent() {
 
   async function createEvent() {
     setIsLoading(true);
+    const long = location.features[0].geometry.coordinates[0];
+    const lat = location.features[0].geometry.coordinates[1];
+
     const { data, error } = await supabase
       .from('events')
       .insert([
@@ -59,9 +63,9 @@ export default function CreateEvent() {
           description,
           image_uri: imageUrl,
           date: date.toISOString(),
-          location,
           user_id: user.id,
-          location_point: 'POINT(-118.14207 33.88162)',
+          location: location.features[0].properties.name,
+          location_point: `POINT(${long} ${lat})`,
         },
       ])
       .select()
@@ -74,7 +78,7 @@ export default function CreateEvent() {
       setTitle('');
       setDescription('');
       setDate(new Date());
-      setLocation('');
+
       router.push(`/event/${data.id}`);
     }
     setIsLoading(false);
@@ -82,7 +86,7 @@ export default function CreateEvent() {
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-      <ScrollView className="mx-3 my-5">
+      <ScrollView className="mx-3 my-5 flex-1" contentContainerClassName="gap-3">
         <View className="items-center ">
           <Avatar
             size={200}
@@ -144,7 +148,10 @@ export default function CreateEvent() {
             </View>
           )}
         </View>
-        {/* Event Location Input */}
+
+        <AddressAutoComplete onSelected={(location) => setLocation(location)} />
+
+        {/* Event Location Input
         <View className="mt-4 rounded-lg border-2 border-gray-300 bg-white p-4 shadow-sm">
           <TextInput
             className="text-xl font-semibold"
@@ -153,7 +160,8 @@ export default function CreateEvent() {
             value={location}
             onChangeText={setLocation}
           />
-        </View>
+        </View> */}
+
         <Pressable
           disabled={loading}
           onPress={() => createEvent()}
