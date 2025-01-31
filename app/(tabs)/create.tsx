@@ -61,7 +61,7 @@ export default function CreateEvent() {
           date: date.toISOString(),
           location,
           user_id: user.id,
-          location_point: 'POINT(-73.946823 40.807416)',
+          location_point: 'POINT(-118.14207 33.88162)',
         },
       ])
       .select()
