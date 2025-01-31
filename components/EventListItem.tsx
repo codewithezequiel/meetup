@@ -43,7 +43,9 @@ export default function EventListItem({ event }) {
           </View>
 
           <View className="flex-row items-center">
-            <Text className="mr-auto text-sm text-gray-600">{`${numberOfAttendees} Attendees`}</Text>
+            <Text className="mr-auto text-sm text-gray-600">
+              {`${numberOfAttendees} Attendees`} {Math.floor(event.dist_meters / 1000)} km from you
+            </Text>
             <Feather name="share" size={24} color="gray" />
             <View className="mx-2" />
             <Feather name="bookmark" size={24} color="gray" />
