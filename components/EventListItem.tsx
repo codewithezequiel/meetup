@@ -35,7 +35,7 @@ export default function EventListItem({ event }) {
                 {event.title}
               </Text>
 
-              <Text className="text-base text-gray-600">{event.location}</Text>
+              <Text className="text-base font-bold text-gray-600">{event.location}</Text>
             </View>
             {event.image_uri && (
               <SupaImage path={event.image_uri} className="aspect-video w-2/5 rounded-xl" />

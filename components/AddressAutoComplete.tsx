@@ -2,14 +2,17 @@ import { useEffect, useState } from 'react';
 import { FlatList, Pressable, Text, TextInput, View } from 'react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { getSuggestions, retrieveDetails } from '~/utils/AddressAutoComplete';
+import { useAuth } from '~/contexts/AuthProvider';
 
 export default function AddressAutoComplete({ onSelected }) {
   const [input, setInput] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const [selectedLocation, setSelectedLocation] = useState();
 
-  function search() {
-    const data = getSuggestions(input);
+  const { session } = useAuth();
+
+  async function search() {
+    const data = await getSuggestions(input, session.access_token);
     setSuggestions(data.suggestions);
   }
 
@@ -18,7 +21,8 @@ export default function AddressAutoComplete({ onSelected }) {
     setInput(suggestion.name);
     setSuggestions([]);
 
-    const details = await retrieveDetails(suggestion.mapbox_id);
+    const details = await retrieveDetails(suggestion.mapbox_id, session.access_token);
+
     onSelected(details);
   }
 

@@ -90,7 +90,7 @@ export default function EventPage() {
           {/* Location */}
           <View className="flex-row items-center">
             <EvilIcons name="location" size={28} color="black" className="mr-2" />
-            <Text className="text-lg text-gray-700">{event.location}</Text>
+            <Text className="text-lg font-bold text-gray-700">{event.location}</Text>
           </View>
 
           {/* Description */}
