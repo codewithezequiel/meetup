@@ -35,12 +35,19 @@ export default function Events() {
 
   // ✅ Get user location once permission is granted
   useEffect(() => {
+    console.log('Fetch location');
     async function getCurrentLocation() {
-      if (!status?.granted) return;
+      console.log('How about here?');
+      if (!status?.granted) {
+        console.log('No Permission granted');
+        return;
+      }
 
       try {
+        console.log('Hello World');
         setLoading(true);
         let userLocation = await Location.getCurrentPositionAsync({});
+        console.log('User location: ', userLocation);
         setLocation(userLocation);
       } catch (error) {
         Alert.alert('Error', 'Unable to fetch location. Make sure location services are enabled.');

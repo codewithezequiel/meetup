@@ -30,7 +30,6 @@ export default {
         '@rnmapbox/maps',
         {
           RNMapboxMapsDownloadToken: process.env.EXPO_MAPBOX_SECRET_TOKEN,
-          RNMapboxMapsVersion: '11.0.0',
         },
       ],
     ],
